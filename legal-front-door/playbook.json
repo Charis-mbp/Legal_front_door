@@ -1,0 +1,180 @@
+{
+  "_note": "Demo playbook for a FICTIONAL health insurer ('Oria Santé'). Policies, owners and thresholds are invented for this portfolio project and are not any real company's rules.",
+  "settings": {
+    "confidence_threshold": 0.7,
+    "triage_owner": "Legal Ops (triage)",
+    "triage_sla_days": 1
+  },
+  "categories": [
+    {
+      "id": "nda_standard",
+      "label": "NDA request",
+      "description": "Someone needs a non-disclosure agreement with a prospect, partner or supplier.",
+      "owner": "Commercial Legal",
+      "sla_days": 2,
+      "min_risk": "low",
+      "auto_answer": "You can use the standard mutual NDA without involving Legal, as long as the other party accepts it unchanged.\n1. Download it from Legal Hub > Templates > Mutual NDA (latest version).\n2. Fill in the parties and the purpose of the discussions.\n3. Send it for e-signature with the usual signature tool and file the signed copy in the contracts folder.\nIf the other party sends its own NDA, or asks to change any clause, submit a new request and Commercial Legal will review it."
+    },
+    {
+      "id": "contract_review",
+      "label": "Contract review",
+      "description": "Review, negotiation or redlines of a customer, supplier or partner contract, or a change to a counterparty's terms.",
+      "owner": "Commercial Legal",
+      "sla_days": 3,
+      "min_risk": "low",
+      "auto_answer": null
+    },
+    {
+      "id": "dispute",
+      "label": "Dispute or formal notice",
+      "description": "A dispute, formal notice (mise en demeure), threatened or actual legal action, or a lawyer writing on behalf of a counterparty.",
+      "owner": "Commercial Legal",
+      "sla_days": 0,
+      "min_risk": "high",
+      "auto_answer": null
+    },
+    {
+      "id": "signature_authority",
+      "label": "Signature authority",
+      "description": "Who is allowed to sign a document, signature thresholds, delegation, whether Legal must be involved before signing.",
+      "owner": "Corporate Governance",
+      "sla_days": 2,
+      "min_risk": "low",
+      "auto_answer": "Signature rules (demo policy):\n- Up to EUR 50k per year on our standard terms: your team lead signs.\n- EUR 50k to 250k per year, or any change to our standard terms: department head signs after a Legal review.\n- Above EUR 250k per year: CFO or CEO.\nClient contracts on unchanged standard terms do not need a Legal review. Everything is signed through the e-signature tool. If a signatory is away, the delegate listed on the Legal Hub can sign."
+    },
+    {
+      "id": "template_request",
+      "label": "Template or policy lookup",
+      "description": "Looking for an existing template, model letter, policy or internal guideline.",
+      "owner": "Legal Ops",
+      "sla_days": 2,
+      "min_risk": "low",
+      "auto_answer": "All current templates and internal policies are on the Legal Hub (Notion > Corporate > Legal Hub), with the version date on each page. Use the search bar with the document name. If the template you need doesn't exist, submit a new request naming it and Legal Ops will add it."
+    },
+    {
+      "id": "privacy_request",
+      "label": "Data subject request",
+      "description": "A member, employee or other person asks to access, delete, correct or port their personal data, or objects to its use.",
+      "owner": "Privacy",
+      "sla_days": 3,
+      "min_risk": "medium",
+      "auto_answer": null,
+      "note": "GDPR Art. 12(3): answer within one month of receipt (extendable by two months for complex requests). Do not reply to the person before Privacy confirms their identity."
+    },
+    {
+      "id": "privacy_incident",
+      "label": "Personal data incident",
+      "description": "Personal data may have been lost, exposed, sent to the wrong person, accessed without authorisation, or a supplier reports a security incident.",
+      "owner": "Privacy",
+      "sla_days": 0,
+      "min_risk": "high",
+      "auto_answer": null,
+      "note": "GDPR Art. 33: a personal data breach must be notified to the supervisory authority within 72 hours of becoming aware of it, unless it is unlikely to result in a risk. The clock may already be running."
+    },
+    {
+      "id": "privacy_new_processing",
+      "label": "New use of personal data",
+      "description": "A new feature, project, data flow or data sharing that uses personal data, especially health data, or a question from a data protection authority about a processing.",
+      "owner": "Privacy",
+      "sla_days": 5,
+      "min_risk": "low",
+      "auto_answer": null
+    },
+    {
+      "id": "vendor_security",
+      "label": "New supplier or tool",
+      "description": "Onboarding a new SaaS tool, supplier or subcontractor that will access company or personal data.",
+      "owner": "Security",
+      "sla_days": 5,
+      "min_risk": "low",
+      "auto_answer": null
+    },
+    {
+      "id": "ai_use",
+      "label": "AI use and AI Act",
+      "description": "Using AI tools at work, building AI features, automated decisions, or EU AI Act questions.",
+      "owner": "Privacy & AI governance",
+      "sla_days": 5,
+      "min_risk": "low",
+      "auto_answer": "AI tools policy (demo):\n- Approved AI tools can be used for work content that contains no personal data and nothing confidential.\n- Never paste member data, health information, employee data or confidential contracts into a tool that is not on the approved list.\n- Any AI use on personal data, any member-facing AI feature and any AI that helps decide about people (pricing, claims, hiring) needs a review by Privacy & AI governance first: submit a new request describing the use case."
+    },
+    {
+      "id": "marketing_review",
+      "label": "Marketing review",
+      "description": "Review of ads, landing pages, social posts, contests, testimonials or sales material before publication.",
+      "owner": "Insurance Compliance",
+      "sla_days": 3,
+      "min_risk": "low",
+      "auto_answer": null
+    },
+    {
+      "id": "insurance_compliance",
+      "label": "Insurance compliance",
+      "description": "Insurance regulation: duty of advice, product changes, policy documents, distribution rules, guarantees.",
+      "owner": "Insurance Compliance",
+      "sla_days": 3,
+      "min_risk": "low",
+      "auto_answer": null
+    },
+    {
+      "id": "member_complaint",
+      "label": "Member complaint",
+      "description": "How to handle a member complaint or a contested refusal of reimbursement.",
+      "owner": "Complaints team",
+      "sla_days": 2,
+      "min_risk": "medium",
+      "auto_answer": null,
+      "note": "Complaint handling deadlines apply (in France, ACPR recommendation 2022-R-01: acknowledge within 10 business days, answer within 2 months)."
+    },
+    {
+      "id": "employment",
+      "label": "Employment law",
+      "description": "Employment questions: contracts, trial periods, remote work abroad, dismissals, working time.",
+      "owner": "Employment Legal",
+      "sla_days": 3,
+      "min_risk": "low",
+      "auto_answer": null
+    },
+    {
+      "id": "other",
+      "label": "Other / unclear",
+      "description": "Not a legal, privacy, compliance or governance question, or too vague to classify.",
+      "owner": "Legal Ops (triage)",
+      "sla_days": 1,
+      "min_risk": "low",
+      "auto_answer": null
+    }
+  ],
+  "red_flag_rules": [
+    {
+      "id": "regulator",
+      "label": "Regulator mentioned",
+      "pattern": "\\b(ACPR|CNIL|FSMA|AEPD|DGCCRF|AMF)\\b",
+      "min_risk": "high"
+    },
+    {
+      "id": "litigation",
+      "label": "Formal notice or legal action",
+      "pattern": "(mise en demeure|formal notice|lawsuit|legal action|assignation|tribunal|proc[eè]s|avocat de|their lawyer|client's lawyer|sue us)",
+      "min_risk": "high"
+    },
+    {
+      "id": "mediator",
+      "label": "Mediator or ombudsman mentioned",
+      "pattern": "(m[eé]diat(eur|ion)|mediator|ombudsman)",
+      "min_risk": "high"
+    },
+    {
+      "id": "data_breach",
+      "label": "Possible personal data breach",
+      "pattern": "(data breach|violation de donn[eé]es|fuite de donn[eé]es|wrong (e-?mail|recipient|address|person)|mauvais(e)? (destinataire|adresse)|cyber ?-?(attaque|attack)|ransomware|piratage|hacked|been exposed|ont [eé]t[eé] expos)",
+      "min_risk": "high"
+    },
+    {
+      "id": "health_data_sharing",
+      "label": "Health data shared outside the company",
+      "pattern": "((donn[eé]es de sant[eé]|health data|medical|m[eé]dical|remboursement|reimbursement)[\\s\\S]*(partenaire|partner|prestataire|vendor|third party|tiers|envoyer|send|share|partager))|((partenaire|partner|prestataire|vendor|third party|tiers|envoyer|send|share|partager)[\\s\\S]*(donn[eé]es de sant[eé]|health data|medical|m[eé]dical))",
+      "min_risk": "medium"
+    }
+  ]
+}
