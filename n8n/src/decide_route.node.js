@@ -4,7 +4,8 @@ const config = $('Config').first().json;
 const request = $('Rule checks').first().json;
 const res = $input.first().json;
 
-const content = res && res.message && res.message.content;
+// Works with the HTTP call to Ollama (message.content) or an Information Extractor node (output).
+const content = res && res.output ? JSON.stringify(res.output) : res && res.message && res.message.content;
 const model = content
   ? parseModelOutput(PLAYBOOK, content)
   : { ok: false, error: res && res.error ? 'model unreachable' : 'empty model response' };

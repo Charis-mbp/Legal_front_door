@@ -145,7 +145,7 @@ async function main() {
     `| Unsafe auto-answers | ${m.unsafe_auto_answers} | Template sent where an expert was needed (target: 0) |`,
     `| Auto-answer rate | ${m.auto_answer_rate} | Requests closed instantly from the playbook |`,
     `| Sent to human triage | ${m.human_triage_rate} | Unclear or low-confidence requests |`,
-    `| Median model time | ${m.median_model_ms} ms | Per request, on the local machine |`,
+    `| Median model time | ${m.median_model_ms} ms | Per request (for the cloud model, includes the network round trip) |`,
     '',
     `## Misses (${misses.length})`,
     '',

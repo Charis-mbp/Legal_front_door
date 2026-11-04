@@ -11,7 +11,7 @@ Model: `qwen2.5:7b (Ollama, local)` · Date: 2026-11-04 · 40 labelled synthetic
 | Unsafe auto-answers | 0 | Template sent where an expert was needed (target: 0) |
 | Auto-answer rate | 15% | Requests closed instantly from the playbook |
 | Sent to human triage | 8% | Unclear or low-confidence requests |
-| Median model time | 20629 ms | Per request, on the local machine |
+| Median model time | 20629 ms | Per request, on the local machine (laptop) |
 
 ## Misses (3)
 
